@@ -39,7 +39,7 @@ Order allow,deny
 </FilesMatch>
 
 # ! Autorise l'accès au fichier media et script tierce
-<FilesMatch "^([a-z]*)\.(js|css|svg|jpg|png|webp|mp4|mkv|mp3|ogg|pdf|gif|aac|csv|zip|rar|xlsx|exe|apk|json|webm|docx)$">
+<FilesMatch "^([a-z]*)\.(js|css|scss|svg|jpg|png|webp|mp4|mkv|mp3|ogg|pdf|gif|aac|csv|zip|rar|xlsx|exe|apk|json|webm|docx)$">
     Allow from all
 </FilesMatch>
 
