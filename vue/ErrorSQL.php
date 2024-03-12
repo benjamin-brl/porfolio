@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <?php if (!$cond) { ?>
-        <link rel="stylesheet" href="./game/memory.css" />
+        <link rel="stylesheet" href="/game/memory.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <?php } ?>
     <title><?= $cond ? 'Erreur SQL' : 'Maintenance' ?></title>
@@ -25,27 +25,29 @@
         }
 
         <?php if ($cond) { ?>
-            ul {
-                list-style-type: none;
-            }
+        ul {
+            list-style-type: none;
+        }
 
-            li {
-                font-size: 18px;
-                margin-left: -2em;
-                color: #666;
-            }
+        li {
+            font-size: 18px;
+            margin-left: -2em;
+            color: #666;
+        }
 
-            li:first-child {
-                margin-top: -.8em;
-            }
+        li:first-child {
+            margin-top: -.8em;
+        }
+
         <?php } else { ?>
-            p {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                font-size: 18px;
-                color: #666;
-            }
+        p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 18px;
+            color: #666;
+        }
+
         <?php } ?>
     </style>
 </head>
@@ -53,11 +55,20 @@
 <body>
     <div class="container">
         <?php if ($cond) { ?>
-            <ul>
-                <?php foreach ($infos as $cle => $valeur) { ?>
-                    <li><?= $cle . $valeur ?></li>
+            <?php foreach ($trace as $element) {
+                foreach ($element as $key => $value) { ?>
+                    <ul>
+                        <?php if ($key == "args") { ?>
+                            <?php foreach ($value as $arg) { ?>
+                                <li><?= $arg ?></li>
+                            <?php }
+                        } else { ?>
+                            <li><?= ucfirst($key) ?> : <?= $value ?></li>
+                        <?php } ?>
+                    </ul>
                 <?php } ?>
-            </ul>
+                <br>
+            <?php } ?>
         <?php } else { ?>
             <h1 class="title">Maintenance</h1>
             <p>Le site est actuellement en maintenance.<br>Petit memory pour faire passer le temps ?</p>

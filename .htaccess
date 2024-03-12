@@ -4,25 +4,68 @@
 
 RewriteEngine On
 
-# Redirection de "/?a=X" vers "/X"
-RewriteRule ^([a-z]+)/?$ ?a=$1
+# Redirection de l'onglet accueil
+RewriteRule ^accueil/?$ ?a=accueil [L]
+# RewriteRule ^\\/?$ ?a=accueil [L]
 
-# ? Si paramètre prédéfini
-# RewriteRule ^accueil/([^/]+)/([^/]+)/?$ ?a=$1&centre=$2&onglet=$3
+# Redirection de l'onglet projets
+RewriteRule ^projet/?$ ?a=projet [L]
+RewriteRule ^projet/([a-z-]*)/?$ ?a=projet&p=$1 [L]
+
+# Redirection de l'onglet updater
+RewriteRule ^updater/?$ ?a=updater [L]
+RewriteRule ^updater/([a-zA-Z0-9-_]*)/?$ ?a=updater&src=$1 [L]
+
+# Redirection de l'onglet cookie
+RewriteRule ^cookie/?$ ?a=cookie [L]
+
+# Redirection de l'onglet des mentions légales
+RewriteRule ^mentions-legales/?$ ?a=mentions [L]
+
+# Redirection de l'onglet presentation
+RewriteRule ^presentation/?$ ?a=presentation [L]
+
+# Redirection de l'onglet erreur
+RewriteRule ^([0-9]{3})/?$ /vue/Error.php?c=$1 [L]
 
 #*
 #*   DEFINITION DES DROITS D'ACCESS
 #*
 
-# ! Interdit l'accès à tout les fichiers dans le dossier courrant
-Order Allow,Deny
-
-# ! Autorise l'accès à au fichier index.php
-<FilesMatch "^(index\.php)|\.(js|css|svg)$">
+Order allow,deny
+# ! Autorise l'accès au fichier index.php
+<FilesMatch "index\.php">
     Allow from all
 </FilesMatch>
 
-# ! Autorise l'accès au fichier demander suite à la réécriture d'URL
-<FilesMatch "^[a-z]*$">
+# ! Autorise l'accès au fichier media et script tierce
+<FilesMatch "^([a-z]*)\.(js|css|svg|jpg|png|webp|mp4|mkv|mp3|ogg|pdf|gif|aac|csv|zip|rar|xlsx|exe|apk|json|webm|docx)$">
     Allow from all
 </FilesMatch>
+
+# ! Autorise l'accès au fichier Error.php
+<FilesMatch "Error\.php">
+    Allow from all
+</FilesMatch>
+
+# ! Autorise l'accès suite aux réécritures
+<FilesMatch "^([a-zA-Z0-9]*)|([0-9]{3})$">
+    Allow from all
+</FilesMatch>
+
+# ! Interdit l'accès aux fichiers .X
+<FilesMatch "^(\.([a-zA-Z]*))$">
+    Deny from all
+</FilesMatch>
+
+#*
+#*   REDIRECTION DES ERREURS
+#*
+
+# Redirection dynamique vers un type d'erreur
+ErrorDocument 301 /vue/Error.php/?c=301
+ErrorDocument 302 /vue/Error.php/?c=302
+ErrorDocument 401 /vue/Error.php/?c=401
+ErrorDocument 403 /vue/Error.php/?c=403
+ErrorDocument 404 /vue/Error.php/?c=404
+ErrorDocument 500 /vue/Error.php/?c=500

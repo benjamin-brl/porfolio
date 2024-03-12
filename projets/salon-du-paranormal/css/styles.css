@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100svw;
+    height: 100svh;
+    background: './assets/bg.png';
+    background-repeat: repeat;
+}
+

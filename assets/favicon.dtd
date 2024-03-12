@@ -1,0 +1,10 @@
+<!ELEMENT svg (g,use)>
+<!ATTLIST svg viewBox CDATA #REQUIRED>
+<!ELEMENT g (g?,use,path?)>
+<!ATTLIST g id NMTOKEN #REQUIRED>
+<!ELEMENT path EMPTY>
+<!ATTLIST path id NMTOKEN #REQUIRED>
+<!ATTLIST path d CDATA #REQUIRED>
+<!ATTLIST path fill CDATA #REQUIRED>
+<!ELEMENT use EMPTY>
+<!ATTLIST use transform CDATA #REQUIRED>

@@ -1,0 +1,8 @@
+<svg height="512" width="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="230,146.25 512,146.25 353,358.25 71,358.25" />
+    <text x="105" y="346" fill="#6b5" transform="scale(1.3 1)" letter-spacing="-4" font-family="Yu Gothic" font-size="50" font-size-adjust="5">
+        CMPP
+    </text>
+    <circle cx="384" cy="179" r="52" fill="#f00" />
+    <path d="M360 200q-35 90-360 90" stroke-width="6px" stroke="red" fill="none"/>
+</svg>

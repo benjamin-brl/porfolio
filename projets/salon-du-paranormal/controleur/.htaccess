@@ -1,0 +1,6 @@
+# Block all access by default
+Order deny,allow
+Deny from all
+
+# Allow access from the Apache2 user
+Allow from localhost
