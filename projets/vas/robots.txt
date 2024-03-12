@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /modele
+Disallow: /vue
+Disallow: /css
+Disallow: /js
+Disallow: /controleur
+Disallow: /assets

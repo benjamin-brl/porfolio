@@ -77,11 +77,12 @@ switch ($code) {
 </head>
 
 <body>
-    <div class="container">
+    <section class="container">
         <h1>Erreur <?= $code ?></h1>
-        <h2><?= $description ?></h2>
+        <p><?= $description ?></p>
+        <img alt="<?= $description ?>" height="700px" src="https://http.cat/<?=$code?>"/>
         <p><?= $commentaire ?></p>
-    </div>
+    </section>
 </body>
 
 </html>

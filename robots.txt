@@ -1,2 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /vue
+Disallow: /modele
+Disallow: /js
+Disallow: /game
+Disallow: /css
+Disallow: /controleur
+Disallow: /assets
+Disallow: /projets
+Disallow: /assets

@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Reem+Kufi+Ink&family=Titillium+Web&family=Work+Sans:ital,wght@0,100;0,200;0,400;1,200&display=swap');
+
 :root {
     --primary-bg-color: #F5F3F4;
     --secondary-bg-color: #131212;
     --primary-color: #660708;
     --secondary-color: #E5383B;
-    --border-color: #0B090A;
+    --shadow-color: #0B090A8E;
 
     --menu-width-mini: 50px;
     --menu-width-extend: 200px;
@@ -13,16 +15,23 @@
 .dark {
     --primary-bg-color: #161A1D;
     --secondary-bg-color: #1d1f20;
-    --primary-color: #BA181B;
-    --secondary-color: #A4161A;
-    --border-color: #f4f6f5;
+    --primary-color: #38ba18;
+    --secondary-color: #6cc264;
+    --shadow-color: #f4f6f58E;
 }
 
 * {
     box-sizing: border-box;
+    transition: all .5s ease-in-out;
+    font-family: "Reem Kufi Ink";
+    cursor: url('https://cdn.custom-cursor.com/db/7121/32/anime-neon-genesis-evangelion-rei-ayanami-and-spear-of-longinus-pointer.png'), default !important;
+    & a, button {
+        cursor: url('https://cdn.custom-cursor.com/db/7122/32/anime-neon-genesis-evangelion-rei-ayanami-and-spear-of-longinus-cursor.png'), default !important;
+    }
 }
 
-html, body {
+html,
+body {
     height: 100svh;
     width: 100svw;
     display: flex;
@@ -32,7 +41,89 @@ html, body {
     overflow-x: hidden;
     -webkit-overflow-scrolling: inherit;
     font-family: 'Work Sans', sans-serif;
-    background: var(--primary-bg-color);
+    /* background: var(--primary-bg-color); */
+}
+
+header {
+    border: var(--shadow-color) solid 1px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    border: var(--shadow-color) solid 1px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+iframe {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 600px;
+    width: 80svw;
+    border: none;
+    border-radius: 20px;
+    box-shadow: var(--shadow-color) 10px 10px 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    list-style: none;
+
+    & li {
+        padding: 0 5px 0 5px;
+    }
+}
+
+progress {
+    width: 150px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+footer {
+    display: flex;
+    margin: auto;
+    height: 10svh;
+    width: 100%;
+    & * {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-self: center;
+        color: var(--primary-color);
+    }
+    & a {
+        color: var(--secondary-color);
+    }
+}
+
+#lightningmode {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    border: none;
 }
 
 .nojs-container {
@@ -54,4 +145,65 @@ html, body {
 
 .nojs-card-text {
     font-size: 1rem;
+}
+
+.autoResize {
+    resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    min-width: 80svw;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#markdownedit {
+    margin: auto;
+    width: 80svw;
+}
+
+[data-markdown] {
+    margin: auto;
+    width: 80svw;
+    border: 1px solid var(--border-color);
+
+    & h1, h2, h3, h4, h5, h6 {
+        color: var(--primary-color);
+    }
+
+    & ul, li, p, a, input, textarea, label {
+        color: var(--secondary-color);
+    }
+
+    & h1 {
+        font-size: 24px;
+    }
+
+    & h2 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+        list-style: circle;
+    }
+
+    & img {
+        max-width: 500px;
+        max-height: 500px;
+    }
+}
+
+.bg {
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+    fill: none;
+    position: fixed;
+    z-index: -1;
+    width: 100svw;
+    height: 100svh;
+    top: 800px;
+    left: 1000px
 }
