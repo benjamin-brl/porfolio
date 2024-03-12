@@ -1,0 +1,173 @@
+h1 {
+  margin: auto;
+  font-size: 32px;
+  text-align: center;
+  color: #eee;
+}
+
+h2 {
+  display: inline-flex;
+  margin: auto;
+  font-size: 24px;
+  text-align: center;
+  color: #eee;
+  padding-bottom: 0.5em;
+}
+
+#main {
+  padding-top: 1em;
+  display: flex;
+  margin: auto;
+  width: 35vw;
+  height: auto;
+  min-width: 350px;
+  background-color: #333;
+  box-shadow: 0px 0px 5px 10px #222;
+  border-radius: 0.75em;
+}
+
+#chrono, #essaie {
+  color: #fff;
+}
+
+.title {
+  color: #333;
+}
+
+.tableau {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(8, 1fr);
+  margin-right: .5em;
+  margin-top: -.5em;
+}
+
+.carte {
+  display: flex;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+}
+
+.tableau .carte {
+  display: flex;
+  margin: auto;
+  height: 50px;
+  transition: transform .8s;
+  transform-style: preserve-3d;
+}
+
+.tableau .carte:hover {
+  display: flex;
+  margin: auto;
+  height: 50px;
+}
+
+.tableau .carte {
+  display: flex;
+  margin: auto;
+}
+
+.corps {
+  width: 50px;
+  height: 50px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.corps-carte {
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.selectionner {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+.match {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.face, .back {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.cadre {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: -1.5em;
+  color: #fff;
+}
+
+.block {
+  display: flex;
+  margin: auto;
+  max-width: 50%;
+  height: 125px;
+  justify-content: center;
+}
+
+.block p {
+  display: flex;
+  margin: auto;
+}
+
+.chronometre {
+  border-radius: 25px;
+  background-color: #444;
+  display: inline-flex;
+  margin: auto;
+  width: 125px;
+  height: 125px;
+  justify-content: center;
+  border: #eee 2px solid;
+}
+
+.success {
+  padding-top: 1em;
+  margin: auto;
+  width: 35vw;
+  height: auto;
+  min-width: 350px;
+  background-color: #333;
+  box-shadow: 0px 0px 5px 10px #222;
+  border-radius: 0.75em;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-height: 25px;
+  min-width: 100px;
+  margin-top: 1em;
+  border-radius: 0.75em;
+  border: #eee 2px solid;
+}

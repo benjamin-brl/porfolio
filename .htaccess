@@ -1,0 +1,28 @@
+#*
+#*   REECRITURE DES URLs
+#*
+
+RewriteEngine On
+
+# Redirection de "/?a=X" vers "/X"
+RewriteRule ^([a-z]+)/?$ ?a=$1
+
+# ? Si paramètre prédéfini
+# RewriteRule ^accueil/([^/]+)/([^/]+)/?$ ?a=$1&centre=$2&onglet=$3
+
+#*
+#*   DEFINITION DES DROITS D'ACCESS
+#*
+
+# ! Interdit l'accès à tout les fichiers dans le dossier courrant
+Order Allow,Deny
+
+# ! Autorise l'accès à au fichier index.php
+<FilesMatch "^(index\.php)|\.(js|css|svg)$">
+    Allow from all
+</FilesMatch>
+
+# ! Autorise l'accès au fichier demander suite à la réécriture d'URL
+<FilesMatch "^[a-z]*$">
+    Allow from all
+</FilesMatch>

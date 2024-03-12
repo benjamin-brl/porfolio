@@ -1,0 +1,57 @@
+:root {
+    --primary-bg-color: #F5F3F4;
+    --secondary-bg-color: #131212;
+    --primary-color: #660708;
+    --secondary-color: #E5383B;
+    --border-color: #0B090A;
+
+    --menu-width-mini: 50px;
+    --menu-width-extend: 200px;
+    --menu-height-pad: 50px;
+}
+
+.dark {
+    --primary-bg-color: #161A1D;
+    --secondary-bg-color: #1d1f20;
+    --primary-color: #BA181B;
+    --secondary-color: #A4161A;
+    --border-color: #f4f6f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100svh;
+    width: 100svw;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: inherit;
+    font-family: 'Work Sans', sans-serif;
+    background: var(--primary-bg-color);
+}
+
+.nojs-container {
+    display: flex;
+}
+
+.nojs-card {
+    width: 100svw;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nojs-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nojs-card-text {
+    font-size: 1rem;
+}
