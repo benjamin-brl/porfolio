@@ -1,32 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const svg = SVG().addTo('#svg-container');
+// const converter = new showdown.Converter();
+// $('[data-markdown]').each(function () {
+//     $(this).html(converter.makeHtml($(this).text()));
+// });
 
-    const pathData = 'M 0 80 Q 95 -20 180 80 Q 265 180 350 80 Q 435 -20 520 80 Q 605 180 690 80';
-    const loopPath = svg.path(pathData);
+const menu = $('#menu-bars');
+const header = $('header');
+const cursor1 = $('.cursor-1');
+const cursor2 = $('.cursor-2');
+const pourcent = $('#pourcent')
+const scroller = $('#scroller')
 
-    function updatePath(scrollPos = 0) {
-        const controlY = 80 + scrollPos;
-        console.log(controlY)
-        const newPathData = `M 0 80 Q 95 ${controlY - 100} 180 80 Q 265 ${260 - controlY} 350 80 Q 435 ${controlY - 100} 520 80 Q 605 ${260 - controlY} 690 80`;
-        loopPath.plot(newPathData);
-    }
+menu.click(function () {
+    menu.toggleClass('fa-times');
+    header.toggleClass('active');
+});
 
-    document.body.addEventListener('scroll', (e) => {
-        console.clear()
-        console.log(`scrollY : ${scrollY}`)
-        console.log(`scrollHeight : ${document.documentElement.scrollHeight}`)
-        console.log(`innerHeight : ${window.innerHeight}`)
-        if (document.documentElement.scrollHeight == window.innerHeight) {
-            var scrollPercentage = parseInt(scrollY / 1 * 100)
-        } else {
-            var scrollPercentage = parseInt(scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100)
-        }
-        console.log(`scrollPercentage : ${scrollPercentage}`)
-        updatePath(scrollPercentage);
-    });
+$(window).scroll(function () {
+    menu.removeClass('fa-times');
+    header.removeClass('active');
+});
 
-    const converter = new showdown.Converter();
-    $('[data-markdown]').each(function () {
-        $(this).html(converter.makeHtml($(this).text()));
-    });
+$(window).mousemove(function (e) {
+    cursor1.css({ top: e.pageY + 'px', left: e.pageX + 'px' });
+    cursor2.css({ top: e.pageY + 'px', left: e.pageX + 'px' });
+});
+
+$('a').mouseenter(function () {
+    cursor1.addClass('active');
+    cursor2.addClass('active');
+}).mouseleave(function () {
+    cursor1.removeClass('active');
+    cursor2.removeClass('active');
+});
+
+$(window).scroll(() => {
+    const pourcentage = Math.round(((window.scrollY + window.innerHeight) / (document.documentElement.scrollHeight)) * 100,0);
+    scroller.val(pourcentage)
+    pourcent.text(`${pourcentage}%`)
 });
