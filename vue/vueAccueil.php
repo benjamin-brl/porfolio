@@ -1,4 +1,4 @@
-<div data-markdown>
+<!-- <div data-markdown>
 ## À propos de moi
 Je m'appelle Benjamin Barial, je suis un jeune Français de 21 ans.
 ### Hobby & passe-temps
@@ -35,4 +35,11 @@ De 2022 à 2024, je suis en 2nd année de BTS SIO...
 De 2018 à 2020, Je suis membre de la classe de défense...
 En 2021, J'ai rejoint l'équipe de l'association « Team River Clean »...
 </div>
-<?php if ($cond) { ?> <div id="markdownedit"></div> <?php } ?>
+<?php if ($cond) { ?> <div id="markdownedit"></div> <?php } ?> -->
+
+<?php
+include_once "$racine/vue/vueTop.php";
+include_once "$racine/vue/vueAbout.php";
+include_once "$racine/vue/vueCompetence.php";
+include_once "$racine/vue/vueProjet.php";
+include_once "$racine/vue/vueContact.php";

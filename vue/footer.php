@@ -1,4 +1,4 @@
-        <footer>
+        <!-- <footer>
             <p><?= $siteName ?> © - 2023</p>
             <p><a href="/mentions-legales">Mentions légales</a></p>
             <p><a href="/cookie">Cookies</a></p>
@@ -14,4 +14,8 @@
         <?php $cond ? include_once "$racine/vue/vueJSAdmin.php" : "" ?>
     </body>
 
+</html> -->
+
+        <script src="/js/app.js"></script>
+    </body>
 </html>

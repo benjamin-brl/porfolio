@@ -9,21 +9,30 @@ RewriteRule ^accueil/?$ ?a=accueil [L]
 # RewriteRule ^\\/?$ ?a=accueil [L]
 
 # Redirection de l'onglet projets
-RewriteRule ^projet/?$ ?a=projet [L]
-RewriteRule ^projet/([a-z-]*)/?$ ?a=projet&p=$1 [L]
+RewriteRule ^porfolio/?$ ?a=projet [L]
+# RewriteRule ^projet/([a-z-]*)/?$ ?a=projet&p=$1 [L]
 
 # Redirection de l'onglet updater
-RewriteRule ^updater/?$ ?a=updater [L]
-RewriteRule ^updater/([a-zA-Z0-9-_]*)/?$ ?a=updater&src=$1 [L]
+# RewriteRule ^updater/?$ ?a=updater [L]
+# RewriteRule ^updater/([a-zA-Z0-9-_]*)/?$ ?a=updater&src=$1 [L]
 
 # Redirection de l'onglet cookie
-RewriteRule ^cookie/?$ ?a=cookie [L]
+# RewriteRule ^cookie/?$ ?a=cookie [L]
 
 # Redirection de l'onglet des mentions légales
-RewriteRule ^mentions-legales/?$ ?a=mentions [L]
+# RewriteRule ^mentions-legales/?$ ?a=mentions [L]
 
 # Redirection de l'onglet presentation
-RewriteRule ^presentation/?$ ?a=presentation [L]
+RewriteRule ^about/?$ ?a=about [L]
+
+# Redirection de l'onglet presentation
+RewriteRule ^contact/?$ ?a=contact [L]
+
+# Redirection de l'onglet home
+RewriteRule ^top/?$ ?a=top [L]
+
+# Redirection de l'onglet competence
+RewriteRule ^competence/?$ ?a=competence [L]
 
 # Redirection de l'onglet erreur
 RewriteRule ^([0-9]{3})/?$ /vue/Error.php?c=$1 [L]

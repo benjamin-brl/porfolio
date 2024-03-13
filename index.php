@@ -12,4 +12,6 @@ $pageName = $fichier[1];
 $siteName = 'PorFolio';
 $domaine = $_SERVER['SERVER_NAME'];
 
+$cond =  $fichier[0] == "accueil.php" ? false : true;
+
 include_once "$racine/controleur/$fichier[0]";

@@ -4,11 +4,10 @@ class ControleurPrincipal {
     private $actions = [
         "accueil" => "accueil.php",
         "projet" => "projet.php",
-        "presentation" => "presentation.php",
-        "valeur" => "valeur.php",
-        "updater" => "updater.php",
-        "cookie" => "cookie.php",
-        "mentions" => "mentions.php",
+        "top" => "top.php",
+        "about" => "presentation.php",
+        "contact" => "contact.php",
+        "competence" => "competence.php",
     ];
     public function getAction($action) {
         return [(array_key_exists($action, $this->actions) ? $this->actions[$action] : (new Erreur)->getError(404)), ucfirst($action)];
